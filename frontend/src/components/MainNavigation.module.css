@@ -20,3 +20,22 @@
 .list a.active {
   color: var(--color-primary-800);
 }
+
+.list button {
+  font: inherit;
+  padding: 0 0.75rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  color: var(--color-gray-100);
+  background-color: var(--color-gray-600);
+}
+
+.list button:focus {
+  outline: 0;
+}
+
+.list button:hover {
+  background-color: var(--color-primary-300);
+  color: var(--color-gray-800);
+}
