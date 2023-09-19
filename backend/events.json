@@ -8,5 +8,21 @@
       "id": "2a42fcc4-ea21-4bdd-abf6-c40006dc66a9"
     }
   ],
-  "users": []
+  "users": [
+    {
+      "email": "test@example.com",
+      "password": "$2a$12$XfbwcpavpxXoz/Xtf9xuQuOgS8dfVdKdcXrzaJLDMIT0f9kQQaNsO",
+      "id": "c7359388-b8b5-4706-a058-71a45a1a0cdd"
+    },
+    {
+      "email": "test1@example.com",
+      "password": "$2a$12$ObDot2Z1BOv5vOtUOsUE8.Uu7P/YneqJSMVc0oe.4sD2D4MHj83w2",
+      "id": "ccefe450-4bcb-4639-9160-26192d1b01aa"
+    },
+    {
+      "email": "test@test.com",
+      "password": "$2a$12$yxGP56l0FC48.I5JJuU.du/fJa920NpOAjBWeKsqNS8u5.QmnHPoG",
+      "id": "571d2e1a-510c-400c-bd27-97132ad388f7"
+    }
+  ]
 }

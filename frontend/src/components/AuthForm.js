@@ -12,7 +12,11 @@ function AuthForm() {
 
   return (
     <>
-      <Form method="post" className={classes.form}>
+      <Form
+        action={`?mode=${isLogin ? 'login' : 'signup'}`}
+        method="post"
+        className={classes.form}
+      >
         <h1>{isLogin ? 'Log in' : 'Create a new user'}</h1>
         <p>
           <label htmlFor="email">Email</label>
