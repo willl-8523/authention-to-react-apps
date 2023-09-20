@@ -1,26 +1,25 @@
-import { useState } from 'react';
-import { Form, useActionData, useNavigation } from 'react-router-dom';
+import {
+  Form,
+  useActionData,
+  useNavigation,
+  Link,
+  useSearchParams,
+} from 'react-router-dom';
 
 import classes from './AuthForm.module.css';
 
 function AuthForm() {
-  const [isLogin, setIsLogin] = useState(true);
   const data = useActionData();
   const navigation = useNavigation();
+  const [searchParams] = useSearchParams();
+  const isLogin = searchParams.get('mode') === 'login';
+  console.log(isLogin);
 
   const isSubmitting = navigation.state === 'submitting';
 
-  function switchAuthHandler() {
-    setIsLogin((isCurrentlyLogin) => !isCurrentlyLogin);
-  }
-
   return (
     <>
-      <Form
-        action={`?mode=${isLogin ? 'login' : 'signup'}`}
-        method="post"
-        className={classes.form}
-      >
+      <Form method="post" className={classes.form}>
         <h1>{isLogin ? 'Log in' : 'Create a new user'}</h1>
         {data && data.errors && (
           <ul>
@@ -39,9 +38,9 @@ function AuthForm() {
           <input id="password" type="password" name="password" required />
         </p>
         <div className={classes.actions}>
-          <button onClick={switchAuthHandler} type="button">
+          <Link to={`?mode=${isLogin ? 'signup' : 'login'}`}>
             {isLogin ? 'Create new user' : 'Login'}
-          </button>
+          </Link>
           <button disabled={isSubmitting}>
             {isSubmitting ? 'Submitting...' : 'Save'}
           </button>
